@@ -9,11 +9,11 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 
-
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
     backend = "http://mn-developer.com:1234"
-    variables = {"backend": backend}
+    title = "CanBank.app"
+    variables = {"backend": backend, 'title': title}
     return templates.TemplateResponse("index.html", {"request": request, **variables})
 
 
