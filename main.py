@@ -1,5 +1,5 @@
 import httpx as httpx
-from fastapi import FastAPI, Request,HTTPException
+from fastapi import FastAPI, Request, HTTPException
 from fastapi.responses import HTMLResponse
 from starlette.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
@@ -9,10 +9,10 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 
+
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
     backend = "http://mn-developer.com:1234"
-    backend = "http://127.0.0.1:8000"
     variables = {"backend": backend}
     return templates.TemplateResponse("index.html", {"request": request, **variables})
 
@@ -29,4 +29,3 @@ async def check(phone: str):
     else:
         raise HTTPException(status_code=400,
                             detail=f"Failed to fetch data. Status code: {response.status_code}")
-
