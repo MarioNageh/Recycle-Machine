@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.fancy-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.question-button {
+    background-color: #3498db;
+    color: #fff;
+}
+
+/* Style for the menu button */
+.menu-button {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.textbooks {
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textbooks input[type="text"] {
+    width: 30%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+
+.balance {
+
+    margin: 20px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.balance label {
+    font-size: 16px;
+}
+
+.balance input[type="text"] {
+    width: 100px;
+    padding: 10px;
+    font-size: 16px;
+    margin-left: 150px;
+}
+
+
+.logo-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    /*background-color: #f1f1f1;*/
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+
+.logo img {
+    height: 100px;
+}
+
+.header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.header h1 {
+    font-size: 24px;
+}
+
+
+.button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.reward-section {
+    margin-top: 20px;
+}
+
+.reward-section label {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.reward-section input[type="radio"] {
+    margin-left: 20px;
+}
+
+.redeem-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.redeem-button button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer img {
+    width: 100%;
+    max-width: 400px;
+}

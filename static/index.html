@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Coca-cola Recycle Machine</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="logo-cont">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Logo_ENI.svg" alt="Logo">
+        </div>
+        <div class="buttons">
+           <button class="fancy-button question-button">
+        <i class="fas fa-question"></i> <!-- Font Awesome "?" icon -->
+    </button>
+
+    <!-- Button with menu icon -->
+    <button class="fancy-button menu-button">
+        <i class="fas fa-bars"></i> <!-- Font Awesome menu icon -->
+    </button>
+        </div>
+    </div>
+    <div class="header">
+        <h3>Please Enter Your Phone Number To Know Your Points</h3>
+    </div>
+    <div class="textbooks">
+        <input type="text" id="mobileNumber" placeholder="Enter your mobile number">
+    </div>
+    <div class="button">
+        <button onclick="getBalance()">Get Balance</button>
+    </div>
+    <div class="balance">
+        <label for="pointsBalance">Existing Points Balance:</label>
+        <input type="text" id="pointsBalance" disabled="">
+    </div>
+    <div class="reward-section">
+        <label>Choose a Reward:</label>
+        <label><input type="radio" name="reward" value="reward1">Phone Credit (50 points)</label>
+    </div>
+</div>
+
+<script>
+    function getBalance() {
+        const mobileNumber = document.getElementById("mobileNumber").value;
+
+        const api = `http://18.218.21.4:8383/api/v1/users/${mobileNumber}/useraccount`;
+        fetch(api)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const user = data.response.user;
+                if (typeof user === 'string' && user.includes('not exist')) {
+                    alert('User does not exist');
+                    return;
+                }
+                document.getElementById("pointsBalance").value = user.usertotalpoints;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+</script>
+</body>
+</html>
