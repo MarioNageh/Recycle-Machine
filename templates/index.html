@@ -65,7 +65,7 @@
                     alert('User does not exist');
                     return;
                 }
-                document.getElementById("pointsBalance").value = user.usertotalpoints;
+                document.getElementById("pointsBalance").value = user.userlastpoints;
             })
             .catch(error => {
                 alert('There was an error. Please try again later.');
