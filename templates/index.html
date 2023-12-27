@@ -16,14 +16,14 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Logo_ENI.svg" alt="Logo">
         </div>
         <div class="buttons">
-           <button class="fancy-button question-button">
-        <i class="fas fa-question"></i> <!-- Font Awesome "?" icon -->
-    </button>
+            <button class="fancy-button question-button" onclick="redirectToHelp()">
+                <i class="fas fa-question"></i> <!-- Font Awesome "?" icon -->
+            </button>
 
-    <!-- Button with menu icon -->
-    <button class="fancy-button menu-button">
-        <i class="fas fa-bars"></i> <!-- Font Awesome menu icon -->
-    </button>
+            <!-- Button with menu icon -->
+            <button class="fancy-button menu-button">
+                <i class="fas fa-bars"></i> <!-- Font Awesome menu icon -->
+            </button>
         </div>
     </div>
     <div class="header">
@@ -39,10 +39,25 @@
         <label for="pointsBalance">Existing Points Balance:</label>
         <input type="text" id="pointsBalance" disabled="">
     </div>
-    <div class="reward-section">
-        <label>Choose a Reward:</label>
-        <label><input type="radio" name="reward" value="reward1">Phone Credit (50 points)</label>
+
+    <div class="divholder">
+        <p>How to use CanBank machine?</p>
+
+        <p>1. Put cans or plastic bottles and wait until it counts your points. Put as many bottles/cans as you want,
+            then press next.</p>
+
+        <p>2. Enter your phone number to register your points, then press next.</p>
+
+        <p>3. Choose your favorite reward or save points for later.</p>
+
+        <p>If you have any problems or need more information, please contact us at: <a href="mailto:Zeropri.me">Zeropri.me</a>
+        </p>
     </div>
+
+    <!--    <div class="reward-section">-->
+    <!--        <label>Choose a Reward:</label>-->
+    <!--        <label><input type="radio" name="reward" value="reward1">Phone Credit (50 points)</label>-->
+    <!--    </div>-->
 </div>
 
 <script>
@@ -72,6 +87,12 @@
             });
     }
 
+
+      function redirectToHelp() {
+        window.location.href = '/help';
+    }
+
 </script>
+
 </body>
 </html>

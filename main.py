@@ -7,14 +7,21 @@ from starlette.templating import Jinja2Templates
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
-
+backend = "https://www.mn-developer.com:8010"
 
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
-    backend = "https://www.mn-developer.com:8010"
     title = "CanBank.app"
     variables = {"backend": backend, 'title': title}
     return templates.TemplateResponse("index.html", {"request": request, **variables})
+
+
+
+@app.get("/help", response_class=HTMLResponse)
+async def help(request: Request):
+    title = "CanBank.app"
+    variables = {"backend": backend, 'title': title}
+    return templates.TemplateResponse("help.html", {"request": request, **variables})
 
 
 @app.get("/check/{phone}")

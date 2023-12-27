@@ -1,5 +1,35 @@
+.divholder {
+    width: 60%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.divholder p {
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.divholder a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.divholder a:hover {
+    text-decoration: underline;
+}
+
+.mybtn {
+    text-align: center;
+}
+
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }

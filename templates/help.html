@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="divholder">
+        <p>How to use CanBank machine?</p>
+
+        <p>1. Put cans or plastic bottles and wait until it counts your points. Put as many bottles/cans as you want,
+            then press next.</p>
+
+        <p>2. Enter your phone number to register your points, then press next.</p>
+
+        <p>3. Choose your favorite reward or save points for later.</p>
+
+        <p>If you have any problems or need more information, please contact us at: <a href="mailto:Zeropri.me">Zeropri.me</a>
+        </p>
+
+        <!-- Back to Home button -->
+       <div class="mybtn">
+            <button class="fancy-button back-to-home-button" onclick="redirectToHome()">
+            <i class="fas fa-home"></i> Back to Home
+        </button>
+       </div>
+    </div>
+</div>
+
+<script>
+    function redirectToHome() {
+        window.location.href = '/';
+    }
+</script>
+
+</body>
+</html>
