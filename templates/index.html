@@ -21,7 +21,7 @@
             </button>
 
             <!-- Button with menu icon -->
-            <button class="fancy-button menu-button">
+            <button class="fancy-button menu-button" onclick="redirectToMenu()">
                 <i class="fas fa-bars"></i> <!-- Font Awesome menu icon -->
             </button>
         </div>
@@ -63,7 +63,10 @@
 <script>
     function getBalance() {
         const mobileNumber = document.getElementById("mobileNumber").value;
-
+        if (mobileNumber === '') {
+            alert('Please enter your mobile number');
+            return;
+        }
         const api = `{{backend}}/check/${mobileNumber}/`;
         fetch(api)
             .then(response => {
@@ -90,6 +93,9 @@
 
       function redirectToHelp() {
         window.location.href = '/help';
+    }
+    function redirectToMenu() {
+        window.location.href = '/menu';
     }
 
 </script>

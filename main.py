@@ -13,8 +13,15 @@ backend = "https://www.mn-developer.com:8010"
 async def read_root(request: Request):
     title = "CanBank.app"
     variables = {"backend": backend, 'title': title}
-    return templates.TemplateResponse("index.html", {"request": request, **variables})
+    return templates.TemplateResponse("landing.html", {"request": request, **variables})
 
+
+
+@app.get("/home", response_class=HTMLResponse)
+async def read_root(request: Request):
+    title = "CanBank.app"
+    variables = {"backend": backend, 'title': title}
+    return templates.TemplateResponse("index.html", {"request": request, **variables})
 
 
 @app.get("/help", response_class=HTMLResponse)
@@ -22,6 +29,14 @@ async def help(request: Request):
     title = "CanBank.app"
     variables = {"backend": backend, 'title': title}
     return templates.TemplateResponse("help.html", {"request": request, **variables})
+
+
+
+@app.get("/menu", response_class=HTMLResponse)
+async def help(request: Request):
+    title = "CanBank.app"
+    variables = {"backend": backend, 'title': title}
+    return templates.TemplateResponse("menu.html", {"request": request, **variables})
 
 
 @app.get("/check/{phone}")
