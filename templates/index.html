@@ -67,7 +67,7 @@
             alert('Please enter your mobile number');
             return;
         }
-        const api = `{{backend}}/check/${mobileNumber}/`;
+        const api = `{{backend}}/eni/check/${mobileNumber}/`;
         fetch(api)
             .then(response => {
                 // check if not 200
@@ -92,10 +92,10 @@
 
 
       function redirectToHelp() {
-        window.location.href = '/help';
+        window.location.href = '/eni/help';
     }
     function redirectToMenu() {
-        window.location.href = '/menu';
+        window.location.href = '/eni/menu';
     }
 
 </script>
